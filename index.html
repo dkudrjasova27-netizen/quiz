@@ -78,14 +78,14 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbzew3yjD0jhRbG6t_HJFz
 const DM_LINK = "https://ig.me/m/dianakudrjasova";
 const KEYS = ["A","B","C","D","E","F"];
 const Q = [
- {q:"Ir piektdienas vakars pēc garās nedēļas. Kur ir Tavas domas?",o:["Jau plānoju nākamo nedēļu, jo, ja ne es, tad kurš?","Joprojām pie datora, jo atpūta var pagaidīt, kamēr darbs ir padarīts.","Pie kāda cita problēmām, lai gan esmu piekususi.","Ritinu sievietes, kuras dzīvo dzīvi, ko vēlos es, un klusi jautāju: kāpēc ne es?","Pārskatu, ko šodien varēju izdarīt labāk.","Nedēļa bija laba, un man jau ir sajūta, ka drīz kaut kas noies greizi."]},
- {q:"Nauda pie Tevis pārsvarā nāk...",o:["Kad es pati pārvaldu katru sīkumu.","Kad strādāju vairāk par visiem apkārt.","Kad esmu tik daudz devusi, ka gandrīz jūtos vainīga to paņemt.","Lēnāk, nekā vajadzētu, jo es neparādu, ko patiesībā spēju.","Tikai tad, kad viss ir izdarīts nevainojami.","Viļņos: atnāk un tikpat ātri kaut kur aiziet."]},
- {q:"Kāds Tev piedāvā palīdzību. Ko Tu saki?",o:["\"Viss kārtībā, es pati\", jo tā ir ātrāk un pareizāk.","Jā, bet jūtu, ka vēl neesmu to nopelnījusi.","Paldies, un es jau domāju, kā viņam atmaksāt.","Neko, jo baidos, ka viņi ieraudzīs, ka neesmu tik sakārtota, kā izskatos.","Jā, bet vispirms sakārtoju visu, lai neizskatās, ka man nesanāk.","Priecājos, bet klusībā gaidu, kad tas beigsies vai kas par to būs jāmaksā."]},
- {q:"Tavs partneris vēlas, lai Tu pilnībā atslābsti un saņem. Tu...",o:["Nevaru izslēgt galvu.","Esmu pārāk nogurusi, lai to patiesi baudītu.","Vispirms parūpējos, lai viņam ir labi.","Sastingstu un jūtos kautrīga savā ķermenī.","Domāju, kā izskatos un vai daru pareizi.","Pēc brīža atrodu iemeslu strīdam vai attālumam."]},
- {q:"Tu domā par cenu pacelšanu vai palūgt vairāk. Tava pirmā doma ir...",o:["\"Tikai tad, kad viss būs ideāli sakārtots.\"","\"Man vispirms vairāk jāpierāda sevi.\"","\"Ko tā viņi padomās, ka esmu alkatīga?\"","\"Kas es tāda esmu, lai to prasītu?\"","\"Vispirms jāuzlabo piedāvājums, tas vēl nav gana labs.\"","\"Pacelšu, un tad visi klienti pazudīs.\""]},
- {q:"Kurš teikums visvairāk līdzinās balsij Tavā galvā?",w:1.5,o:["\"Ja es atlaidīšu, viss sabruks.\"","\"Dzīvē nekas nenāk par velti.\"","\"Vispirms visi pārējie, es vēlāk.\"","\"Neaizņem pārāk daudz vietas.\"","\"Tam jābūt perfekti, citādi labāk nedarīt nemaz.\"","\"Tas ir pārāk labi, lai būtu patiesi.\""]},
- {q:"Kad ir laiks publicēt Instagram vai parādīties kamerā, Tu...",o:["Plānoju katru vārdu un kadru, lai nekas nenotiek nejauši.","Uztveru to kā vēl vienu uzdevumu sarakstā.","Uztraucos, kā to uztvers citi.","Godīgi sakot, labāk paliktu aizkulisēs.","Pārrakstu un pārfilmēju, līdz ir perfekti, vai nepublicēju vispār.","Sāku ar degsmi, nopublicēju dažus ierakstus un tad pazudu uz nedēļām."]},
- {q:"Ko Tu šobrīd slepeni vēlies visvairāk?",o:["Beidzot izelpot un uzticēties, ka dzīve mani tur.","Nopelnīt vairāk, strādājot mazāk.","Lai par mani rūpējas tā, kā es rūpējos par visiem.","Lai mani redz, kāro un izvēlas tieši tādu, kāda esmu.","Beidzot atļauties kļūdīties un justies mierīgi.","Lai labais beidzot paliek un nepazūd."]}
+ {q:"Ir piektdienas vakars pēc garās nedēļas. Kur ir Tavas domas?",o:["Jau plānoju nākamo nedēļu, jo, ja ne es, tad kurš?","Joprojām pie datora, jo atpūta var pagaidīt, ir jāizdara darbs.","Pie kāda cita problēmām, lai gan esmu piekususi.","Skrolēju IG, skatos uz citu dzīvi un domāju: kāpēc man tā nav?","Pārskatu, ko šodien varēju izdarīt labāk.","Nedēļa bija laba, un man jau ir sajūta, ka drīz kaut kas noies greizi."]},
+ {q:"Nauda pie Tevis pārsvarā nāk...",o:["Kad es pati visu izdaru un pārvaldu.","Kad strādāju vairāk par visiem apkārt.","Kad esmu tik daudz devusi, ka gandrīz jūtos vainīga to paņemt.","Lēnāk, nekā vajadzētu, jo es neparādu, ko patiesībā spēju.","Tikai tad, kad viss ir izdarīts nevainojami.","Viļņos: atnāk un tikpat ātri kaut kur aiziet."]},
+ {q:"Kāds Tev piedāvā palīdzību. Ko Tu saki?",o:["\"Viss kārtībā, es pati\", jo tā ir ātrāk un pareizāk.","Jā, bet jūtu, ka vēl neesmu to nopelnījusi.","Paldies, un es jau domāju, kā viņam atmaksāt.","Neko, jo baidos, ka viņi ieraudzīs, ka neesmu tik spēcīga, kā izskatos.","Jā, bet vispirms sakārtoju visu, lai neizskatās, ka man nesanāk.","Priecājos, bet klusībā gaidu, kad tas beigsies vai kad par to būs jāmaksā."]},
+ {q:"Tavs partneris vēlas, lai Tu pilnībā atslābsti un saņem... Tu...",o:["Nevaru izslēgt galvu.","Esmu pārāk nogurusi, lai to patiesi baudītu.","Vispirms parūpējos, lai viņam ir labi.","Sastingstu un jūtos kautrīga savā ķermenī.","Domāju, kā izskatos un vai daru pareizi.","Pēc brīža atrodu iemeslu, lai attālinātos."]},
+ {q:"Tu domā par cenu pacelšanu vai palūgt paaugstinājumu. Tava pirmā doma ir...",o:["\"Tikai tad, kad viss būs ideāli sakārtots.\"","\"Man vispirms vairāk jāpierāda sevi.\"","\"Viņi padomās, ka esmu alkatīga?\"","\"Kas es tāda esmu, lai to prasītu?\"","\"Vispirms jāuzlabo piedāvājums, tas vēl nav gana labs.\"","\"Pacelšu, un tad visi klienti pazudīs.\""]},
+ {q:"Kurš teikums visvairāk līdzinās balsij Tavā galvā?",w:1.5,o:["\"Ja es atslābšu, viss sabruks.\"","\"Dzīvē nekas nenāk par velti.\"","\"Vispirms visi pārējie, es vēlāk.\"","\"Neaizņem pārāk daudz vietas.\"","\"Tam jābūt perfekti, citādi labāk nedarīt nemaz.\"","\"Tas ir pārāk labi, lai būtu patiesi.\""]},
+ {q:"Kad ir laiks publicēt Instagram vai parādīties kamerā, Tu...",o:["Plānoju katru vārdu un kadru, lai viss sanāk perfekti.","Uztveru to kā vēl vienu uzdevumu sarakstā.","Uztraucos, kā to uztvers citi.","Godīgi sakot, labāk paliktu aizkulisēs.","Pārrakstu un pārfilmēju, līdz ir perfekti, vai nepublicēju vispār.","Sāku ar degsmi, nopublicēju dažus ierakstus un tad pazudu uz nedēļām."]},
+ {q:"Ko Tu šobrīd slepeni vēlies visvairāk?",o:["Beidzot izelpot un patiesi uzticēties procesam.","Nopelnīt vairāk, strādājot mazāk.","Lai par mani rūpējas tā, kā es rūpējos par visiem.","Lai mani redz, kāro un izvēlas tieši tādu, kāda esmu.","Beidzot atļauties kļūdīties un justies mierīgi.","Lai labais beidzot paliek un nepazūd."]}
 ];
 const R = {
  A:{n:"Kontrolētāja",d:"Tu esi tā, uz kuru visi balstās. Tu vadi biznesu, mājas un pusi no citu cilvēku dzīvēm, un no malas tas izskatās pēc spēka. Bet iekšā Tavs prāts nekad neizslēdzas, jo kādā brīdī Tu iemācījies, ka tiklīdz atlaidīsi, viss sabruks.",c:"atpūtu, baudu un spēju saņemt. Nauda, mīlestība un palīdzība nevar ienākt, ja katru vietu jau aizņem Tava kontrole, tāpēc Tu turpini visu nest viena un brīnies, kāpēc ir tik smagi.",s:"šonedēļ izvēlies vienu lietu, ko vienmēr dari pati, un ļauj kādam citam to izdarīt savā veidā, nelabojot. Pamani paniku, kas paceļas, izelpo to un pasaki sev: \"Es esmu drošībā, arī kad nekontrolēju.\""},
@@ -105,7 +105,7 @@ function start(){
   show(h("div",{class:"screen start"},
     h("img",{class:"start-img",src:"img/start.jpg",alt:"Kura slēptā programma vada Tavu dzīvi?",width:1000,height:1125}),
     h("button",{class:"btn",on:{click:()=>{st.i=0;question();}}},"Sākt testu →"),
-    h("div",{class:"meta"},"8 jautājumi · apmēram 2 minūtes")
+    h("div",{class:"meta"},"8 jautājumi · apmēram 3 minūtes")
   ));
 }
 
@@ -186,7 +186,9 @@ function result(k){
       h("div",{class:"box"},h("h3",{},"Ko tas Tev maksā"),h("p",{},cap(r.c))),
       h("div",{class:"box"},h("h3",{},"Tavs pirmais solis"),h("p",{},cap(r.s))),
       h("div",{class:"close"},
-        h("p",{html:"Zināt savu programmu ir tikai sākums. Tā nemainās tikai tāpēc, ka Tu to saproti, un saproti, no kurienes tā nāk. Tā mainās tad, kad Tu šodienā veido to identitāti, kurai tās vairs nav. Tieši to mēs darām <strong>High Caliber Woman</strong> programmā, četrnedēļu programmā, kura sākas 10. janvārī. Lai izietu atlasi uz šo VIP programmu, raksti man DM \"HCW\"."}),
+        h("p",{},"Zināt savu programmu ir tikai sākums. Tā nemainās tikai tāpēc, ka Tu to saproti, un zini, no kurienes tā nāk."),
+        h("p",{html:"Tā mainās tad, kad Tu šodienā veido to identitāti, kurai tās vairs nav. Tieši to mēs darām <strong>High Caliber Woman</strong> 4 nedēļu programmā, kura sākas 10. janvārī."}),
+        h("p",{},"Lai izietu atlasi, raksti man DM \"HCW\"."),
         h("a",{class:"btn",href:DM_LINK,target:"_blank",rel:"noopener"},"Rakstīt man Instagram →")
       )
     ),
