@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="lv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Slēptās programmas tests</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Kura slēptā programma vada Tavu dzīvi? Tests no Dianas Kudrjašovas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Raleway:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#000;--card:#0d0c0a;--line:#2a251d;--fg:#F3ECE1;--soft:#cfc6b8;--gold:#C9A46A;--gold2:#e2c48e;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 Raleway,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:560px;margin:0 auto;padding-block:20px 48px;min-height:100svh;display:flex;flex-direction:column}
+.screen{display:flex;flex-direction:column;flex:1;animation:in .45s ease}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+img{display:block;width:100%;height:auto;border-radius:14px}
+.pf{font-family:"Playfair Display",Georgia,serif;font-weight:400}
+.eb{font:700 12px/1.3 Raleway,Arial,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.btn{appearance:none;border:0;border-radius:999px;background:linear-gradient(180deg,var(--gold2),var(--gold));color:#000;font:700 16px/1 Raleway,Arial,sans-serif;letter-spacing:.06em;padding:20px 28px;width:100%;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;box-shadow:0 8px 30px rgba(201,164,106,.25);transition:transform .15s,opacity .2s}
+.btn:active{transform:scale(.98)}
+.btn[disabled]{opacity:.35;box-shadow:none;cursor:default}
+.ghost{background:none;border:0;color:var(--soft);font:500 15px Raleway,sans-serif;padding:12px 4px;cursor:pointer}
+.start-img{margin-top:4px;box-shadow:0 0 0 1px var(--line)}
+.start .btn{margin-top:22px}
+.meta{margin-top:14px;text-align:center;color:var(--soft);font-size:14px}
+/* questions */
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+.bar{height:3px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:30px}
+.bar i{display:block;height:100%;background:var(--gold);transition:width .4s ease}
+.q{font-size:clamp(26px,7vw,34px);line-height:1.22;margin:0 0 26px;text-wrap:balance}
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{appearance:none;text-align:left;width:100%;background:var(--card);border:1px solid var(--line);border-radius:14px;color:var(--fg);font:500 16px/1.45 Raleway,sans-serif;padding:16px 16px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;transition:border-color .2s,background .2s}
+.opt b{flex:none;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font:600 13px Raleway,sans-serif;margin-top:-1px}
+.opt.on{border-color:var(--gold);background:#1a1610}
+.opt.on b{background:var(--gold);color:#000}
+.nav{margin-top:auto;padding-top:26px;display:flex;align-items:center;gap:14px}
+.nav .btn{flex:1}
+/* contact */
+.lead{font-size:clamp(28px,7.5vw,36px);line-height:1.2;margin:26px 0 22px;text-wrap:balance}
+label{display:block;font:600 13px Raleway,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin:0 0 8px}
+.f{margin-bottom:18px}
+input[type=text],input[type=email],textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:500 17px Raleway,sans-serif;padding:16px;outline:none;transition:border-color .2s}
+input:focus,textarea:focus{border-color:var(--gold)}
+textarea{min-height:110px;resize:vertical;line-height:1.5}
+.hint{font:400 14px/1.4 Raleway,sans-serif;text-transform:none;letter-spacing:0;color:var(--soft);display:block;margin-top:4px}
+.ck{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:var(--soft);cursor:pointer;margin:6px 0 4px}
+.ck input{flex:none;width:22px;height:22px;accent-color:var(--gold);margin:1px 0 0}
+.err{color:#e59a8a;font-size:14px;min-height:20px;margin:8px 0 0}
+/* result */
+.hello{font-size:clamp(30px,8vw,40px);line-height:1.15;margin:18px 0 6px}
+.hello span{color:var(--gold)}
+.sub{color:var(--soft);margin:0 0 20px}
+.res-img{box-shadow:0 0 0 1px var(--line)}
+.txt{margin-top:26px}
+.txt p{margin:0 0 18px}
+.box{border-left:2px solid var(--gold);padding:2px 0 2px 18px;margin:0 0 20px}
+.box h3{margin:0 0 6px;font:700 12px/1.3 Raleway,sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.box p{margin:0}
+.close{margin-top:10px;padding:24px 20px;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,#14110c,#0a0907)}
+.close p{margin:0 0 20px}
+.close strong{color:var(--gold2);font-weight:600}
+.foot{margin-top:34px;display:flex;align-items:center;justify-content:center;gap:14px;color:var(--gold);font:700 11px Arial,sans-serif;letter-spacing:.32em}
+.foot i{width:40px;height:1px;background:var(--gold)}
+@media (min-width:700px){.wrap{padding-top:40px}}
+</style>
+</head>
+<body>
+
+<div class="wrap" id="app"></div>
+
+<script>
+// Google Sheet: ieliec šeit Apps Script tīmekļa lietotnes saiti (README).
+const SHEET_URL = "https://script.google.com/macros/s/AKfycbzew3yjD0jhRbG6t_HJFzXrDTtSJ1UbJ9YWM2zIH10yNN6KOCaI3YAP_JZRVuCfiIvM/exec";
+const DM_LINK = "https://ig.me/m/dianakudrjasova";
+const KEYS = ["A","B","C","D","E","F"];
+const Q = [
+ {q:"Ir piektdienas vakars pēc garās nedēļas. Kur ir Tavas domas?",o:["Jau plānoju nākamo nedēļu, jo, ja ne es, tad kurš?","Joprojām pie datora, jo atpūta var pagaidīt, kamēr darbs ir padarīts.","Pie kāda cita problēmām, lai gan esmu piekususi.","Ritinu sievietes, kuras dzīvo dzīvi, ko vēlos es, un klusi jautāju: kāpēc ne es?","Pārskatu, ko šodien varēju izdarīt labāk.","Nedēļa bija laba, un man jau ir sajūta, ka drīz kaut kas noies greizi."]},
+ {q:"Nauda pie Tevis pārsvarā nāk...",o:["Kad es pati pārvaldu katru sīkumu.","Kad strādāju vairāk par visiem apkārt.","Kad esmu tik daudz devusi, ka gandrīz jūtos vainīga to paņemt.","Lēnāk, nekā vajadzētu, jo es neparādu, ko patiesībā spēju.","Tikai tad, kad viss ir izdarīts nevainojami.","Viļņos: atnāk un tikpat ātri kaut kur aiziet."]},
+ {q:"Kāds Tev piedāvā palīdzību. Ko Tu saki?",o:["\"Viss kārtībā, es pati\", jo tā ir ātrāk un pareizāk.","Jā, bet jūtu, ka vēl neesmu to nopelnījusi.","Paldies, un es jau domāju, kā viņam atmaksāt.","Neko, jo baidos, ka viņi ieraudzīs, ka neesmu tik sakārtota, kā izskatos.","Jā, bet vispirms sakārtoju visu, lai neizskatās, ka man nesanāk.","Priecājos, bet klusībā gaidu, kad tas beigsies vai kas par to būs jāmaksā."]},
+ {q:"Tavs partneris vēlas, lai Tu pilnībā atslābsti un saņem. Tu...",o:["Nevaru izslēgt galvu.","Esmu pārāk nogurusi, lai to patiesi baudītu.","Vispirms parūpējos, lai viņam ir labi.","Sastingstu un jūtos kautrīga savā ķermenī.","Domāju, kā izskatos un vai daru pareizi.","Pēc brīža atrodu iemeslu strīdam vai attālumam."]},
+ {q:"Tu domā par cenu pacelšanu vai palūgt vairāk. Tava pirmā doma ir...",o:["\"Tikai tad, kad viss būs ideāli sakārtots.\"","\"Man vispirms vairāk jāpierāda sevi.\"","\"Ko tā viņi padomās, ka esmu alkatīga?\"","\"Kas es tāda esmu, lai to prasītu?\"","\"Vispirms jāuzlabo piedāvājums, tas vēl nav gana labs.\"","\"Pacelšu, un tad visi klienti pazudīs.\""]},
+ {q:"Kurš teikums visvairāk līdzinās balsij Tavā galvā?",w:1.5,o:["\"Ja es atlaidīšu, viss sabruks.\"","\"Dzīvē nekas nenāk par velti.\"","\"Vispirms visi pārējie, es vēlāk.\"","\"Neaizņem pārāk daudz vietas.\"","\"Tam jābūt perfekti, citādi labāk nedarīt nemaz.\"","\"Tas ir pārāk labi, lai būtu patiesi.\""]},
+ {q:"Kad ir laiks publicēt Instagram vai parādīties kamerā, Tu...",o:["Plānoju katru vārdu un kadru, lai nekas nenotiek nejauši.","Uztveru to kā vēl vienu uzdevumu sarakstā.","Uztraucos, kā to uztvers citi.","Godīgi sakot, labāk paliktu aizkulisēs.","Pārrakstu un pārfilmēju, līdz ir perfekti, vai nepublicēju vispār.","Sāku ar degsmi, nopublicēju dažus ierakstus un tad pazudu uz nedēļām."]},
+ {q:"Ko Tu šobrīd slepeni vēlies visvairāk?",o:["Beidzot izelpot un uzticēties, ka dzīve mani tur.","Nopelnīt vairāk, strādājot mazāk.","Lai par mani rūpējas tā, kā es rūpējos par visiem.","Lai mani redz, kāro un izvēlas tieši tādu, kāda esmu.","Beidzot atļauties kļūdīties un justies mierīgi.","Lai labais beidzot paliek un nepazūd."]}
+];
+const R = {
+ A:{n:"Kontrolētāja",d:"Tu esi tā, uz kuru visi balstās. Tu vadi biznesu, mājas un pusi no citu cilvēku dzīvēm, un no malas tas izskatās pēc spēka. Bet iekšā Tavs prāts nekad neizslēdzas, jo kādā brīdī Tu iemācījies, ka tiklīdz atlaidīsi, viss sabruks.",c:"atpūtu, baudu un spēju saņemt. Nauda, mīlestība un palīdzība nevar ienākt, ja katru vietu jau aizņem Tava kontrole, tāpēc Tu turpini visu nest viena un brīnies, kāpēc ir tik smagi.",s:"šonedēļ izvēlies vienu lietu, ko vienmēr dari pati, un ļauj kādam citam to izdarīt savā veidā, nelabojot. Pamani paniku, kas paceļas, izelpo to un pasaki sev: \"Es esmu drošībā, arī kad nekontrolēju.\""},
+ B:{n:"Cīnītāja",d:"Tu esi disciplinēta, mērķtiecīga un lepna par to, cik daudz spēj iznest. Atpūta šķiet kā kaut kas, kas jānopelna, un, kad nauda nāk viegli, Tu tai slepeni neuzticies. Tāpēc Tu pievieno vēl vienu projektu, vēl vienu vēlu vakaru, vēl vienu grūdienu, bet Tavi ienākumi joprojām neaug tādā tempā kā Tavas pūles.",c:"enerģiju, veselību un to maigo, sievišķīgo dzīvi, ko Tu patiesi vēlies. Izdegšana nav veiksmes cena, tā ir šīs programmas cena.",s:"pieraksti trīs brīžus, kad nauda, klients vai iespēja pie Tevis atnāca bez cīņas. Tie ir bijuši. Lasi tos katru rītu septiņas dienas un saki: \"Nauda var nākt pie manis viegli.\""},
+ C:{n:"Vēlme izpatikt",d:"Tu sajūti citu vajadzības, pirms viņi pasaka kaut vārdu, un Tu esi pirmā, kas palīdz, paliek ilgāk un saka jā. Lūgt to, ko vēlies, šķiet savtīgi, tāpēc Tu dod atlaidi, pirms kāds to lūdz, un klusē par to, kas sāp.",c:"Tavas cenas, Tavas robežas un Tavas pašas vēlmes. Kad Tu vienmēr dod, nepaliek vietas, lai kāds dotu Tev.",s:"šonedēļ pasaki vienu godīgu \"nē\", nepaskaidrojot un neatvainojoties. Tad palūdz vienu lietu, ko vēlies, vienkārši un tieši, un ļauj otram izlemt."},
+ D:{n:"Neredzamā",d:"Tu zini, ka spēj daudz vairāk, un vēro, kā citas sievietes ieņem skatuvi, klientus un uzmanību, par ko Tu sapņo. Tu attur savu viedokli, savas cenas un savu juteklisko pusi, gaidot, kad jutīsies gatava, perfekta vai pietiekami vērtīga, lai parādītos.",c:"redzamību, naudu un kārību. Pasaule var izvēlēties tikai to sievieti, ko tā redz, un šobrīd Tu slēp savas magnētiskākās puses.",s:"nākamās septiņas dienas katru dienu dalies ar vienu lietu, ko tiešām domā, Instagram, sarunā vai ar partneri, iepriekš to nemaigojot. Ļauj sevi ieraudzīt katru dienu mazliet vairāk."},
+ E:{n:"Perfekcioniste",d:"Tu redzi katru kļūdu, pirms to pamana kāds cits, un Tavs standarts vienmēr ir soli augstāk par to, kur Tu esi. Tu pārraksti, pārbaudi un uzlabo, un pat tad, kad citi saka \"izcili\", Tava galva atrod, kas vēl nav gana labi. Kādā brīdī Tu iemācījies, ka mīlestību un atzinību var nopelnīt tikai ar nevainojamību.",c:"laiku, prieku un iespējas. Kamēr Tu gaidi, kad būs perfekti, citas sievietes jau pārdod, publicē un saņem, bet Tu paliec ar sajūtu, ka vēl neesi gatava.",s:"šonedēļ apzināti izdari vienu lietu \"uz 80%\" un palaid to pasaulē, nelabojot. Pieraksti, kas notika patiesībā, un salīdzini to ar to, ko Tava galva solīja."},
+ F:{n:"Sabotētāja",d:"Tu esi bijusi tik tuvu: jauns klients, labs mēnesis, attiecības, kurās beidzot ir mierīgi. Un tieši tad kaut kas notiek. Tu saslimsti, sastrīdies, atliec, iztērē vai pazūdi. No malas tas izskatās pēc nejaušības, bet iekšā Tava sistēma vienkārši atgriežas tur, kur tai ir pazīstami un \"droši\".",c:"izaugsmi, kas nekad nenoturas. Nauda atnāk un aiziet, mīlestība pietuvojas un attālinās, un Tu sāc ticēt, ka \"man vienkārši tā nesanāk\".",s:"atceries pēdējo reizi, kad viss gāja labi, un pieraksti, ko Tu izdarīji tieši pirms tas sabruka. Šonedēļ, kad sajūti to pašu impulsu, apstājies un pajautā sev: \"No kā es tagad sevi sargāju?\""}
+};
+
+const app = document.getElementById("app");
+const st = {i:0, a:Array(Q.length).fill(null), lead:{}};
+const h = (tag, attrs={}, ...kids) => { const e=document.createElement(tag); for(const k in attrs){ if(k==="on") for(const ev in attrs.on) e.addEventListener(ev,attrs.on[ev]); else if(k==="html") e.innerHTML=attrs[k]; else e.setAttribute(k,attrs[k]); } kids.flat().forEach(c=>e.append(c)); return e; };
+const show = el => { app.replaceChildren(el); window.scrollTo(0,0); };
+
+function start(){
+  show(h("div",{class:"screen start"},
+    h("img",{class:"start-img",src:"img/start.jpg",alt:"Kura slēptā programma vada Tavu dzīvi?",width:1000,height:1125}),
+    h("button",{class:"btn",on:{click:()=>{st.i=0;question();}}},"Sākt testu →"),
+    h("div",{class:"meta"},"8 jautājumi · apmēram 2 minūtes")
+  ));
+}
+
+function question(){
+  const item=Q[st.i], n=Q.length;
+  const next=h("button",{class:"btn",...(st.a[st.i]===null?{disabled:""}:{}),on:{click:go}},st.i===n-1?"Turpināt →":"Nākamais →");
+  const opts=item.o.map((t,k)=>h("button",{class:"opt"+(st.a[st.i]===k?" on":""),type:"button",on:{click:e=>{
+    st.a[st.i]=k; opts.forEach(o=>o.classList.remove("on")); e.currentTarget.classList.add("on"); next.disabled=false;
+    clearTimeout(st.t); st.t=setTimeout(go,380);
+  }}},h("b",{},KEYS[k]),h("span",{},t)));
+  function go(){ clearTimeout(st.t); if(st.a[st.i]===null) return; if(st.i<n-1){st.i++;question();} else contact(); }
+  show(h("div",{class:"screen"},
+    h("div",{class:"top"},h("span",{class:"eb"},`Jautājums ${st.i+1} / ${n}`)),
+    h("div",{class:"bar"},h("i",{style:`width:${(st.i)/n*100}%`})),
+    h("h1",{class:"q pf"},item.q),
+    h("div",{class:"opts"},opts),
+    h("div",{class:"nav"},
+      h("button",{class:"ghost",type:"button",on:{click:()=>{clearTimeout(st.t); if(st.i===0) start(); else {st.i--;question();}}}},"← Atpakaļ"),
+      next)
+  ));
+}
+
+function score(){
+  const s={A:0,B:0,C:0,D:0,E:0,F:0};
+  st.a.forEach((k,i)=>{ s[KEYS[k]]+=Q[i].w||1; });
+  let best="A"; KEYS.forEach(k=>{ if(s[k]>=s[best]) best=k; }); // vienādos punktos uzvar vēlākais (kā Tally)
+  return {s,best};
+}
+
+function contact(){
+  const L=st.lead;
+  const f=(id,lab,type,extra={})=>h("div",{class:"f"},h("label",{for:id},lab),h("input",{id,type,value:L[id]||"",...extra}));
+  const err=h("p",{class:"err",role:"alert"});
+  const form=h("form",{novalidate:"",on:{submit:send}},
+    f("name","Vārds *","text",{autocomplete:"given-name",required:""}),
+    f("email","E-pasts *","email",{autocomplete:"email",inputmode:"email",required:""}),
+    f("ig","Instagram @ *","text",{autocapitalize:"none",autocorrect:"off",placeholder:"@",required:""}),
+    h("div",{class:"f"},h("label",{for:"why"},"Ja šī programma vairs nevadītu Tavu dzīvi, kas mainītos vispirms?",h("span",{class:"hint"},"Nav obligāti")),h("textarea",{id:"why"})),
+    h("label",{class:"ck"},h("input",{type:"checkbox",id:"ok"}),h("span",{},"Piekrītu saņemt e-pastus no Dianas Kudrjašovas un jebkurā brīdī varu atteikties *")),
+    err,
+    h("div",{class:"nav"},
+      h("button",{class:"ghost",type:"button",on:{click:()=>{st.i=Q.length-1;question();}}},"← Atpakaļ"),
+      h("button",{class:"btn",type:"submit"},"Parādīt manu rezultātu"))
+  );
+  form.querySelector("#why").value=L.why||"";
+  show(h("div",{class:"screen"},
+    h("div",{class:"bar",style:"margin-bottom:22px"},h("i",{style:"width:100%"})),
+    h("img",{src:"img/gatavs.jpg",alt:"Tavs rezultāts ir gatavs",width:1000,height:400}),
+    form));
+  function send(e){
+    e.preventDefault();
+    const v=id=>form.querySelector("#"+id).value.trim();
+    Object.assign(L,{name:v("name"),email:v("email"),ig:v("ig"),why:v("why")});
+    if(!L.name) return err.textContent="Lūdzu, ieraksti savu vārdu.";
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(L.email)) return err.textContent="Lūdzu, pārbaudi e-pasta adresi.";
+    if(!L.ig.replace("@","")) return err.textContent="Lūdzu, ieraksti savu Instagram.";
+    if(!form.querySelector("#ok").checked) return err.textContent="Lūdzu, atzīmē piekrišanu.";
+    const {s,best}=score();
+    if(SHEET_URL){
+      const body=new URLSearchParams({name:L.name,email:L.email,instagram:L.ig,answer:L.why,result:R[best].n,
+        answers:st.a.map(k=>KEYS[k]).join(""),scores:KEYS.map(k=>k+":"+s[k]).join(" ")});
+      try{ fetch(SHEET_URL,{method:"POST",mode:"no-cors",body}).catch(()=>{}); }catch(_){}
+    }
+    result(best);
+  }
+}
+
+function result(k){
+  const r=R[k];
+  const name=h("span",{});name.textContent=st.lead.name;
+  show(h("div",{class:"screen"},
+    h("p",{class:"eb",style:"margin:6px 0 0"},"Tavs rezultāts"),
+    h("h1",{class:"hello pf"},"Sveika, ",name,"!"),
+    h("p",{class:"sub"},"Tavu dzīvi šobrīd visvairāk vada šī programma:"),
+    h("img",{class:"res-img",src:`img/${k}.jpg`,alt:r.n,width:1000,height:942}),
+    h("div",{class:"txt"},
+      h("p",{},r.d),
+      h("div",{class:"box"},h("h3",{},"Ko tas Tev maksā"),h("p",{},cap(r.c))),
+      h("div",{class:"box"},h("h3",{},"Tavs pirmais solis"),h("p",{},cap(r.s))),
+      h("div",{class:"close"},
+        h("p",{html:"Zināt savu programmu ir tikai sākums. Tā nemainās tikai tāpēc, ka Tu to saproti, un saproti, no kurienes tā nāk. Tā mainās tad, kad Tu šodienā veido to identitāti, kurai tās vairs nav. Tieši to mēs darām <strong>High Caliber Woman</strong> programmā, četrnedēļu programmā, kura sākas 10. janvārī. Lai izietu atlasi uz šo VIP programmu, raksti man DM \"HCW\"."}),
+        h("a",{class:"btn",href:DM_LINK,target:"_blank",rel:"noopener"},"Rakstīt man Instagram →")
+      )
+    ),
+    h("div",{class:"foot"},h("i"),"DIANA KUDRYASHOVA",h("i"))
+  ));
+}
+const cap=t=>t.charAt(0).toUpperCase()+t.slice(1);
+
+start();
+</script>
+</body>
+</html>
