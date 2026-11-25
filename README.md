@@ -21,5 +21,5 @@ Tāpat kā numeroloģijas testam: GitHub repozitorijs ar šiem failiem → Verce
 Bez build iestatījumiem (Framework: Other).
 
 ## Punktu skaitīšana
-A Kontrolētāja, B Cīnītāja, C Vēlme izpatikt, D Neredzamā, E Perfekcioniste, F Sabotētāja.
+A Kontrolētāja, B Cīnītāja, C Vēlme izpatikt, D Neredzamā, E Perfekcioniste.
 Katra atbilde +1, 6. jautājums +1,5. Uzvar lielākais; vienādos punktos uzvar vēlākais (kā Tally).
