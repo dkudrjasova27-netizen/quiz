@@ -48,7 +48,7 @@ input[type=text],input[type=email],textarea{width:100%;background:var(--card);bo
 input:focus,textarea:focus{border-color:var(--gold)}
 textarea{min-height:110px;resize:vertical;line-height:1.5}
 .hint{font:400 14px/1.4 Raleway,sans-serif;text-transform:none;letter-spacing:0;color:var(--soft);display:block;margin-top:4px}
-.ck{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;color:var(--soft);cursor:pointer;margin:6px 0 4px}
+.ck{display:flex;gap:12px;align-items:flex-start;font:500 15px/1.45 Raleway,sans-serif;letter-spacing:0;text-transform:none;color:var(--fg);cursor:pointer;margin:6px 0 4px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
 .ck input{flex:none;width:22px;height:22px;accent-color:var(--gold);margin:1px 0 0}
 .err{color:#e59a8a;font-size:14px;min-height:20px;margin:8px 0 0}
 /* result */
@@ -140,18 +140,17 @@ function contact(){
   const L=st.lead;
   const f=(id,lab,type,extra={})=>h("div",{class:"f"},h("label",{for:id},lab),h("input",{id,type,value:L[id]||"",...extra}));
   const err=h("p",{class:"err",role:"alert"});
-  const form=h("form",{novalidate:"",on:{submit:send}},
+  const sub=h("button",{class:"btn",type:"submit",disabled:""},"Parādīt manu rezultātu");
+  const form=h("form",{novalidate:"",style:"margin-top:26px",on:{submit:send}},
     f("name","Vārds *","text",{autocomplete:"given-name",required:""}),
     f("email","E-pasts *","email",{autocomplete:"email",inputmode:"email",required:""}),
     f("ig","Instagram @ *","text",{autocapitalize:"none",autocorrect:"off",placeholder:"@",required:""}),
-    h("div",{class:"f"},h("label",{for:"why"},"Ja šī programma vairs nevadītu Tavu dzīvi, kas mainītos vispirms?",h("span",{class:"hint"},"Nav obligāti")),h("textarea",{id:"why"})),
-    h("label",{class:"ck"},h("input",{type:"checkbox",id:"ok"}),h("span",{},"Piekrītu saņemt e-pastus no Dianas Kudrjašovas un jebkurā brīdī varu atteikties *")),
+    h("label",{class:"ck"},h("input",{type:"checkbox",id:"ok",required:"",on:{change:e=>{sub.disabled=!e.target.checked;}}}),h("span",{},"Piekrītu saņemt e-pastus no Dianas Kudrjašovas un jebkurā brīdī varu atteikties *")),
     err,
     h("div",{class:"nav"},
       h("button",{class:"ghost",type:"button",on:{click:()=>{st.i=Q.length-1;question();}}},"← Atpakaļ"),
-      h("button",{class:"btn",type:"submit"},"Parādīt manu rezultātu"))
+      sub)
   );
-  form.querySelector("#why").value=L.why||"";
   show(h("div",{class:"screen"},
     h("div",{class:"bar",style:"margin-bottom:22px"},h("i",{style:"width:100%"})),
     h("img",{src:"img/gatavs.jpg",alt:"Tavs rezultāts ir gatavs",width:1000,height:400}),
@@ -159,14 +158,14 @@ function contact(){
   function send(e){
     e.preventDefault();
     const v=id=>form.querySelector("#"+id).value.trim();
-    Object.assign(L,{name:v("name"),email:v("email"),ig:v("ig"),why:v("why")});
+    Object.assign(L,{name:v("name"),email:v("email"),ig:v("ig")});
     if(!L.name) return err.textContent="Lūdzu, ieraksti savu vārdu.";
     if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(L.email)) return err.textContent="Lūdzu, pārbaudi e-pasta adresi.";
     if(!L.ig.replace("@","")) return err.textContent="Lūdzu, ieraksti savu Instagram.";
     if(!form.querySelector("#ok").checked) return err.textContent="Lūdzu, atzīmē piekrišanu.";
     const {s,best}=score();
     if(SHEET_URL){
-      const body=new URLSearchParams({name:L.name,email:L.email,instagram:L.ig,answer:L.why,result:R[best].n,
+      const body=new URLSearchParams({name:L.name,email:L.email,instagram:L.ig,answer:"",result:R[best].n,
         answers:st.a.map(k=>KEYS[k]).join(""),scores:KEYS.map(k=>k+":"+s[k]).join(" ")});
       try{ fetch(SHEET_URL,{method:"POST",mode:"no-cors",body}).catch(()=>{}); }catch(_){}
     }
